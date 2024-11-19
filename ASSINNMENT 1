@@ -1,0 +1,26 @@
+class Book:
+    def __init__(self, title, author, pages, genre):
+        self.title = title
+        self.author = author
+        self.pages = pages
+        self.genre = genre
+    
+    def display_info(self):
+        return f"Title: {self.title}, Author: {self.author}, Pages: {self.pages}, Genre: {self.genre}"
+    
+    def read_book(self):
+        return f"Reading {self.title} by {self.author}."
+
+class EBook(Book):
+    def __init__(self, title, author, pages, genre, file_size):
+        super().__init__(title, author, pages, genre)
+        self.file_size = file_size
+    
+    def display_info(self):
+        basic_info = super().display_info()
+        return f"{basic_info}, File Size: {self.file_size}MB"
+    
+    def read_book(self):
+        return f"Reading the e-book version of {self.title} by {self.author}, which is {self.file_size}MB."
+
+# Creating
